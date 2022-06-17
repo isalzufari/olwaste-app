@@ -6,7 +6,7 @@ const ButtonSucces = () => {
 
 const ButtonPrimary = (props) => {
   return (
-    <button type="button" className="btn btn-success btn-brand w-100 h-50">{props.children}</button>
+    <button {...props} type="button" className="btn btn-success btn-brand w-100 h-50">{props.children}</button>
   )
 }
 
