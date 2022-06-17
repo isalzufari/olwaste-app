@@ -6,27 +6,35 @@ import { sha256 } from "js-sha256"
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+    //prepare library and data
     let navigate = useNavigate();
     const [classRole,setClassRole] = useState(0)
     const [errShow, setErrShow] = useState(false)
     const [emailTaken, setEmailTaken] = useState(false)
+
     //Logic for role Choose
     const chooseRole = (e) => {
         e.preventDefault()
         console.log(e.target.id)
         Number(e.target.id)==2 ? setClassRole(2) : setClassRole(1)
     }
+
+    //function for regist
     const signUpHandler = async (e) => {
         e.preventDefault()
+        //setting all message to false
         setErrShow(false)
         setEmailTaken(false)
+        //get all data from input
         const nama = document.getElementById("nama").value
         const password = sha256(document.getElementById("password").value)
         const email = document.getElementById("email").value
         const kota = document.getElementById("kota").value
+        // if one of those data is not filled by user it will show error message 
         if(nama==undefined || password==undefined || email==undefined || kota==undefined || classRole==0){
             setErrShow(true)
         }else{
+            // all data is complete then check if email was taken
             const ket = classRole == 1 ? "pengguna" : "pengrajin"
             const response = await fetch("https://olwastebe.affaalfiandy.my.id/checkemail",{
                 method: 'POST',
@@ -37,9 +45,10 @@ const SignUp = () => {
                     body: JSON.stringify({"email":email})
                 })
             const data = await response.json()
+            // if email not taken this code will run
             if(data[0]==undefined){
+                //if ket is pengguna then this code will run
                 if(ket=="pengguna"){
-                    console.log("Pengguna")
                     const regist = await fetch("https://olwastebe.affaalfiandy.my.id/registkonsumen",{
                         method: 'POST',
                         headers: {
@@ -49,7 +58,7 @@ const SignUp = () => {
                             body: JSON.stringify({"nama":nama,"password":password,"kota":kota,"ket":ket,"email":email})
                         })
                 }else{
-                    console.log("pengrajin")
+                    //else if not pengguna then this code will run
                     const regist = await fetch("https://olwastebe.affaalfiandy.my.id/registpengrajin",{
                         method: 'POST',
                         headers: {
@@ -60,9 +69,11 @@ const SignUp = () => {
                         })
                 }
             }else{
+                // if email taken this will pop up error message
                 setEmailTaken(true)
             }
         }
+        // after all of this done it will push to login
         navigate("/login")
     }
     return(
