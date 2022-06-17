@@ -1,5 +1,4 @@
-import './App.css';
-import { ButtonSucces, Navbar, CardProduct, CardUser } from './components/components';
+import { ButtonSucces, Navbar, CardProduct, CardUser, Footer } from './components/components';
 
 function App() {
   return (
@@ -17,6 +16,7 @@ function App() {
       
         <ButtonSucces />
       </div>
+      <Footer />
     </>
   );
 }

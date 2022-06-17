@@ -55,7 +55,7 @@ const CardProduct = () => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <small>Creator @{creator}</small>
-                    <p>Rp: {price}</p>
+                    <p className="card-text">Rp: {price}</p>
                 </div>
             </div>
         </a>
@@ -78,4 +78,21 @@ const CardUser = () => {
     )
 }
 
-export { ButtonSucces, ButtonFail, Navbar, CardProduct, CardUser };
+const Footer = () => {
+  return (
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted">Copyright © 2022 | OiWaste</span>
+      </div>
+    </footer>
+  )
+}
+
+export { 
+    ButtonSucces, 
+    ButtonFail, 
+    Navbar, 
+    CardProduct, 
+    CardUser, 
+    Footer 
+};
