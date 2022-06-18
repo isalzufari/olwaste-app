@@ -6,8 +6,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 //Importing Component for Routes
 import App from './App';
-import Login from './login';
-import SignUp from './signup';
+import Login from './pages/login';
+import SignUp from './pages/signup';
+import DetailProduct from './pages/DetailProduct';
+import DetailCraftMan from './pages/DetailCraftMan';
+import JobForCraft from './pages/JobForCraft'
+//import footer and header
+import { Navbar, Footer } from './components/components';
 
 // Style
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -23,6 +28,30 @@ root.render(
         <Route path="/" element={<App />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/signup" element={<SignUp />}/>
+        <Route path="/detailproduct" element={<>
+                                                <Navbar/>
+                                                <div className='container p-5'>
+                                                  <DetailProduct />
+                                                </div>
+                                                <Footer/>
+                                              </>
+                                            }/>
+        <Route path="/detailcraftman" element={<>
+                                                <Navbar/>
+                                                <div className='container p-5'>
+                                                  <DetailCraftMan />
+                                                </div>
+                                                <Footer/>
+                                              </>}/>
+        <Route path="/jobforcraft" element={
+                                              <>
+                                              <Navbar/>
+                                              <div className='container p-5'>
+                                                <JobForCraft />
+                                              </div>
+                                              <Footer/>
+                                            </>
+                                          }/>
       </Routes>
     </React.StrictMode>
   </BrowserRouter>
