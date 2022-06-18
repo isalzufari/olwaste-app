@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 //Importing Component for Routes
 import App from './App';
-<<<<<<< HEAD
 import Login from './pages/login';
 import SignUp from './pages/signup';
 import DetailProduct from './pages/DetailProduct';
@@ -14,10 +13,6 @@ import DetailCraftMan from './pages/DetailCraftMan';
 import JobForCraft from './pages/JobForCraft'
 //import footer and header
 import { Navbar, Footer } from './components/components';
-=======
-import Login from './login';
-import SignUp from './signup';
->>>>>>> 50c99beaf802588c4711350aa89c31ef76fe737e
 
 // Style
 import 'bootstrap/dist/css/bootstrap.min.css'
