@@ -4,6 +4,12 @@ const ButtonSucces = () => {
   )
 }
 
+const ButtonPrimary = (props) => {
+  return (
+    <button {...props} type="button" className="btn btn-success btn-brand w-100 h-50">{props.children}</button>
+  )
+}
+
 const ButtonFail = () => {
   return (
     <button type="button" className="btn btn-warning">Okee</button>
@@ -89,10 +95,11 @@ const Footer = () => {
 }
 
 export { 
-  ButtonSucces, 
-  ButtonFail, 
-  Navbar, 
-  CardProduct, 
-  CardUser, 
-  Footer 
+    ButtonSucces, 
+    ButtonFail, 
+    ButtonPrimary,
+    Navbar, 
+    CardProduct, 
+    CardUser, 
+    Footer 
 };
