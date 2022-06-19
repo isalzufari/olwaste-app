@@ -1,12 +1,12 @@
 import { Navbar, Footer } from './components/components';
-import DetailProduct from './pages/DetailProduct';
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
       <Navbar />
       <div className='container p-5'>
-        <DetailProduct />
+        <Home />
       </div>
       <Footer />
     </>

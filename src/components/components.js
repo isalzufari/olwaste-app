@@ -61,10 +61,10 @@ const Navbar = () => {
   )
 }
 
-const CardProduct = () => {
-    const name = 'Produk Jadi'
-    const creator = 'jimmy'
-    const price = 18000;
+const CardProduct = (props) => {
+    const name = props.name
+    const creator = props.penjual
+    const price = props.harga.toLocaleString().replace(",",".");
     return (
         <a href="/#" className="text-decoration-none link-dark">
             <div className="card" style={{ width: '16rem' }}>
@@ -99,7 +99,7 @@ const Footer = () => {
   return (
     <footer class="footer mt-auto py-3 bg-light">
       <div class="container text-center">
-        <span class="text-muted">Copyright © 2022 | OiWaste</span>
+        <span class="text-muted">Copyright © 2022 | OlWaste</span>
       </div>
     </footer>
   )
