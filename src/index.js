@@ -11,6 +11,9 @@ import SignUp from './pages/signup';
 import DetailProduct from './pages/DetailProduct';
 import DetailCraftMan from './pages/DetailCraftMan';
 import JobForCraft from './pages/JobForCraft'
+import CariPengrajin from './pages/CariPengrajin';
+import CariProduk from './pages/CariProduk';
+import CariSampah from './pages/CariSampah';
 //import footer and header
 import { Navbar, Footer } from './components/components';
 
@@ -48,6 +51,33 @@ root.render(
                                               <Navbar/>
                                               <div className='container p-5'>
                                                 <JobForCraft />
+                                              </div>
+                                              <Footer/>
+                                            </>
+                                          }/>
+        <Route path="/caripengrajin" element={
+                                              <>
+                                              <Navbar/>
+                                              <div className='container p-5'>
+                                                <CariPengrajin />
+                                              </div>
+                                              <Footer/>
+                                            </>
+                                          }/>
+        <Route path="/cariproduk" element={
+                                              <>
+                                              <Navbar/>
+                                              <div className='container p-5'>
+                                                <CariProduk />
+                                              </div>
+                                              <Footer/>
+                                            </>
+                                          }/>
+        <Route path="/carisampah" element={
+                                              <>
+                                              <Navbar/>
+                                              <div className='container p-5'>
+                                                <CariSampah />
                                               </div>
                                               <Footer/>
                                             </>

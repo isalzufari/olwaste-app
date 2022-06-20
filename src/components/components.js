@@ -16,6 +16,15 @@ const ButtonFail = () => {
   )
 }
 
+const SearchBar = (props) => {
+  return(
+    <div style={{height:"40px"}} className="container d-inline-flex border border-secondary rounded p-2 w-sm-100 w-lg-25">
+      <p className="bi bi-search"></p>
+      <input className="rounded border border-0 w-100 h-100 form-control shadow-none" {...props}/>
+    </div>
+  )
+}
+
 const Navbar = () => {
   const data = JSON.parse(localStorage.getItem("dataUser"))
   return (
@@ -52,10 +61,10 @@ const Navbar = () => {
   )
 }
 
-const CardProduct = () => {
-    const name = 'Produk Jadi'
-    const creator = 'jimmy'
-    const price = 18000;
+const CardProduct = (props) => {
+    const name = props.name
+    const creator = props.penjual
+    const price = props.harga.toLocaleString().replace(",",".");
     return (
         <a href="/#" className="text-decoration-none link-dark">
             <div className="card" style={{ width: '16rem' }}>
@@ -70,16 +79,16 @@ const CardProduct = () => {
     )
 }
 
-const CardUser = () => {
-    const name = 'Doddy Rafendra'
-    const username = 'doddy'
+const CardUser = (props) => {
+    const name = props.name
+    const kota = props.kota
     return (
         <a href="/#" className="text-decoration-none link-dark">
             <div className="card" style={{ width: '16rem' }}>
                 <img src="/img/pengguna.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <small>@{username}</small>
+                    <small>{kota}</small>
                 </div>
             </div>
         </a>
@@ -90,7 +99,7 @@ const Footer = () => {
   return (
     <footer class="footer mt-auto py-3 bg-light">
       <div class="container text-center">
-        <span class="text-muted">Copyright © 2022 | OiWaste</span>
+        <span class="text-muted">Copyright © 2022 | OlWaste</span>
       </div>
     </footer>
   )
@@ -103,5 +112,6 @@ export {
     Navbar, 
     CardProduct, 
     CardUser, 
-    Footer 
+    Footer,
+    SearchBar
 };
