@@ -36,8 +36,8 @@ const Home = () =>{
                     <br/>
                     <p>We produce limited and high quality waste products from waste!</p>
                 </div>
-                <div className="card" style={{ width: '16rem' }}>
-                    <img src="/img/HomeImage.png" className="card-img-top" alt="..." />
+                <div className="card border-0" style={{ width: '16rem', height:"auto" }}>
+                    <img src="/img/HomeImage.png" className="card-img-top border-0" alt="..." />
                 </div>
             </div>
 

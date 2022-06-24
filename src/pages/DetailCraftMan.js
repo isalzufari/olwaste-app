@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { CardProduct } from '../components/components';
 
 const DetailCraftMan = () => {
   let name='Doddy Rafendra', username='doddy', skill='Kerajinan Kayu';
+  const navigate = useNavigate();
 
   return (
     <div className='row'>
@@ -27,7 +29,7 @@ const DetailCraftMan = () => {
               </div>
               <div className='col'>
                 <div class="d-grid">
-                <button class="btn btn-success btn-brand" type="button">Sewa Jasa</button>
+                <button class="btn btn-success btn-brand" type="button" onClick={()=>navigate('/jobforcraft')}>Sewa Jasa</button>
                 </div>
               </div>
             </div>
@@ -46,7 +48,7 @@ const DetailCraftMan = () => {
             <p><b>Profil</b></p>
             <p>Saya berpengalaman di dunia pembuatan mebel sejak tahun 2014. Membuat barang di bidang kerajinan kayu.</p>
             <p><b>Produk</b></p>
-            <CardProduct />
+            <CardProduct name={"pengki"} harga={10000} penjual={name}/>
             <p className='mt-3'><b>Review</b></p>
             <div className='row'>
               <div className='col-2'>

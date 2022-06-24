@@ -66,7 +66,7 @@ const CardProduct = (props) => {
     const creator = props.penjual
     const price = props.harga.toLocaleString().replace(",",".");
     return (
-        <a href="/#" className="text-decoration-none link-dark">
+        <a href="/detailproduct" className="text-decoration-none link-dark">
             <div className="card" style={{ width: '16rem' }}>
                 <img src="/img/produkjadi.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -83,7 +83,7 @@ const CardUser = (props) => {
     const name = props.name
     const kota = props.kota
     return (
-        <a href="/#" className="text-decoration-none link-dark">
+        <a href="/detailcraftman" className="text-decoration-none link-dark">
             <div className="card" style={{ width: '16rem' }}>
                 <img src="/img/pengguna.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
